@@ -6,3 +6,6 @@
   notas[,c("m_notas","atual"):=NULL]
   #tira uma amostra de notas para cada mes, do tamanho solicitado ou pega todas se o valor solicitado é maior do que as notas disponiveis
   notas <- notas[,.SD[sample(.N, min(amostra,.N))],.(id_estabelecimento,ano_mes2)]
+
+
+full[dic,ano_mes2 := ano_mes, on = c("ano_mes" = "id_ano_mes")]
